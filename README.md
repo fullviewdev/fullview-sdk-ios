@@ -73,17 +73,8 @@ And use `FullviewCore.stop()` to disconnect and disable the SDK.
  
 ## Additional features usage
 - [Data Redaction](data_redaction.md)
-- [Cobrowse Request](cobrowse_request.md)
 - [Screen Sharing](screen_share.md)
  
-
-## Examples
-
-There are simple sample projects for each platform in the `Examples` folder:
-
-  - [Example Projects](Examples/)
-    
-
 ## Fullview SDK API
 
 - `static func start()`
