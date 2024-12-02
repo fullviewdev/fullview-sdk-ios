@@ -16,7 +16,9 @@ let package = Package(
             ]
         )
     ],
-    dependencies: [ ],
+    dependencies: [
+        .package(url: "https://github.com/daily-co/daily-client-ios", from: "0.25.0")
+    ],
     targets: [
         .binaryTarget(
             name: "FullviewSDK",
