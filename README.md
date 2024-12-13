@@ -1,8 +1,8 @@
 # iOS Developer Documentation
 
-**Minimum Platform Version**: iOS 13
+**Minimum Platform Version**: iOS 15.0
 
-**Current version:** 0.1.0
+**Current version:** 0.9.0
 
 Fullview iOS SDK supports following frameworks:
 
@@ -58,14 +58,23 @@ A minimal implementation looks like the following:
 ```swift
 import FullviewSDK
 
-let config = FullviewConfig(
-    userId: "<user_identifier>",
-    name: "<username>",
-    email: "<email>,
-    deviceId: "<device_id"
-)
-FullviewCore.config(config)
-FullviewCore.start()
+var fullview: FullviewCore?
+
+do {
+    let config = try FullviewConfig(
+        userId: "<user_identifier>",
+        name: "<username>",
+        email: "<email>",
+        deviceId: "<device_id>" // must be a uuid string
+    )
+    fullview = FullviewCore(config: config)
+    fullview?.onError = { error in
+        print("Runtime error: \(error)")
+    }
+    fullview?.start()
+} catch {
+    print("Error: \(error)")
+}
 ```
 *Note*: `device_id` must be an unique UUID. Generate it with `UUID().uuidString` and save it locally to be reused.
 
@@ -75,13 +84,18 @@ And use `FullviewCore.stop()` to disconnect and disable the SDK.
 - [Data Redaction](data_redaction.md)
 - [Screen Sharing](screen_share.md)
  
+ 
+## Examples
+- [UIKit basic example](examples/UIKit)
+- [SwiftUI basic example](examples/SwiftUI)
+
 ## Fullview SDK API
 
-- `static func start()`
+- `func start()`
 
 	Attaches the Fullview SDK to the host app. Can be called at any time. All the Fullview functionality is done through an additional UIWindow on top of the rest of the Windows.
 
-- `static func config(_ config: FullviewConfig)`
+- `func config(_ config: FullviewConfig)`
 
 	Registers user to be available in Fullview
 
@@ -90,18 +104,22 @@ And use `FullviewCore.stop()` to disconnect and disable the SDK.
 
 	Logs out the current user from Fullview
 
-- `static func makeCoBrowseRequest(completion: @escaping (Error?) -> Void)`
+- `func makeCoBrowseRequest(completion: @escaping (Error?) -> Void)`
 
 	Puts the user into a waiting queue requesting help from agents
 
-- `static func cancelCoBrowseRequest(completion: @escaping (Error?) -> Void)`
+- `func cancelCoBrowseRequest(completion: @escaping (Error?) -> Void)`
 
 	Remove the user from the waiting queue
 
-- `static var delegate: FullviewCoreDelegate?`
+- `var delegate: FullviewCoreDelegate?`
 
 	Delegate to receive information about Fullview events so the UI can react if necessary (optional).
 
-- `static val coBrowseStatus: CoBrowseStatus`
+- `val coBrowseStatus: CoBrowseStatus`
 
 	Published status emitting the current state of the SDK. Used to update the UI in SwiftUI if necessary (optional)
+	
+- `var onError: ((FullviewError) -> Void)?`
+
+	Completion block to receive runtime errors. (error are also received through the delegate)

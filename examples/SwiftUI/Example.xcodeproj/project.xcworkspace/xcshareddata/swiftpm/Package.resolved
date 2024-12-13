@@ -1,0 +1,24 @@
+{
+  "originHash" : "398f6b462cbf9b68b0baff6bc53696a0bc71c257cd6e3382fa07bbb2f838ef5b",
+  "pins" : [
+    {
+      "identity" : "daily-client-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daily-co/daily-client-ios",
+      "state" : {
+        "revision" : "9e2d67e39560c14402d00bb6e48a203882b8bb96",
+        "version" : "0.25.0"
+      }
+    },
+    {
+      "identity" : "fullview-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fullviewdev/fullview-sdk-ios",
+      "state" : {
+        "revision" : "cf78de9cae4f28619efe1a87692837c20eee7394",
+        "version" : "0.9.0"
+      }
+    }
+  ],
+  "version" : 3
+}

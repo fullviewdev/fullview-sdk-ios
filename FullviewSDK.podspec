@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                    LICENSE
   }
   s.author       = { 'Fullview' => 'support@fullview.io' }
-  s.source       = { :http => 'https://github.com/fullviewdev/fullview-sdk-ios/releases/download/0.9.0/FullviewSDK.xcframework.zip' }
+  s.source       = { :http => 'https://github.com/fullviewdev/fullview-sdk-ios/releases/download/v0.9.0/FullviewSDK.xcframework.zip' }
 
   s.platform     = :ios, '15.0'
   s.vendored_frameworks = 'FullviewSDK.xcframework'
