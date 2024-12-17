@@ -23,8 +23,8 @@ let package = Package(
         .binaryTarget(
             name: "FullviewSDK",
             url:
-                "https://github.com/fullviewdev/fullview-sdk-ios/releases/download/v0.9.2/FullviewSDK.xcframework.zip",
-            checksum: "50f0a6f3fc97447c810b1cedf3ca06977bacc2a2eba78ab05b8eca7a28459c52"
+                "https://github.com/fullviewdev/fullview-sdk-ios/releases/download/v0.9.3/FullviewSDK.xcframework.zip",
+            checksum: "4165adb6fa2110f7eb9d08458d30c76c8cbff256d1a483e4a00ac61a11fce157"
         )
     ]
 )

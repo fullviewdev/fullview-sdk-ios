@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'FullviewSDK'
-  s.version      = '0.9.2'
+  s.version      = '0.9.3'
   s.summary      = 'Enhance your customer support with screen-sharing/real-time assistance.'
    s.description  = <<-DESC
                      With Fullview SDK, you can effortlessly integrate screen-sharing, real-time assistance, and advanced data redaction for sensitive information, enhancing user support while prioritizing security and privacy.
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                    LICENSE
   }
   s.author       = { 'Fullview' => 'support@fullview.io' }
-  s.source       = { :http => 'https://github.com/fullviewdev/fullview-sdk-ios/releases/download/v0.9.2/FullviewSDK.xcframework.zip' }
+  s.source       = { :http => 'https://github.com/fullviewdev/fullview-sdk-ios/releases/download/v0.9.3/FullviewSDK.xcframework.zip' }
 
   s.platform     = :ios, '15.0'
   s.vendored_frameworks = 'FullviewSDK.xcframework'
