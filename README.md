@@ -42,7 +42,6 @@ Then include `"FullviewSDK"` in your target dependencies. For example:
 
 ## Configuration
 
-- Add your Fullview organisation id in your `Info.plist`, key **FullviewSDKOrganisationId**
 - Add the following permissions if you don't already have them:
 	- **NSMicrophoneUsageDescription**
 	- **NSCameraUsageDescription**
@@ -62,16 +61,17 @@ var fullview: FullviewCore?
 
 do {
     let config = try FullviewConfig(
+        organisationId: "<organisation_id>",
         userId: "<user_identifier>",
-        name: "<username>",
-        email: "<email>",
         deviceId: "<device_id>" // must be a uuid string
+        name: "<username>",
+        email: "<email>"
     )
-    fullview = FullviewCore(config: config)
+    fullview = FullviewCore()
     fullview?.onError = { error in
         print("Runtime error: \(error)")
     }
-    fullview?.start()
+    fullview?.register(config: config)
 } catch {
     print("Error: \(error)")
 }
@@ -93,18 +93,19 @@ And use `FullviewCore.stop()` to disconnect and disable the SDK.
 
 - `func start()`
 
-	Attaches the Fullview SDK to the host app. Can be called at any time. All the Fullview functionality is done through an additional UIWindow on top of the rest of the Windows.
 
-- `func config(_ config: FullviewConfig)`
+
+- `func register(_ config: FullviewConfig)`
 
 	Registers user to be available in Fullview
+   Attaches the Fullview SDK to the host app. All the Fullview functionality is done through an additional UIWindow on top of the rest of the windows.
 
 
-- `stop()`
+- `func logout()`
 
 	Logs out the current user from Fullview
 
-- `func makeCoBrowseRequest(completion: @escaping (Error?) -> Void)`
+- `func requestCoBrowse(completion: @escaping (Error?) -> Void)`
 
 	Puts the user into a waiting queue requesting help from agents
 
