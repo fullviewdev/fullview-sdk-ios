@@ -10,12 +10,16 @@ Fullview iOS SDK supports following frameworks:
   - UIKit
   - SwiftUI
 
+Other frameworks supported:
+
+  - Android
+  - React Native
+
 Soon-supported frameworks:
 
-- React Native
-- Ionic
-- Cordova
-- Flutter
+  - Flutter
+  - Ionic
+  - Cordova
 
 
 ## Installation
@@ -50,7 +54,7 @@ Then include `"FullviewSDK"` in your target dependencies. For example:
 
 ## Usage
 
-Add `import FullviewSDK` and then use the static methods in **FullviewCore** to configure and start the SDK.
+Add `import FullviewSDK` and then use the methods in **FullviewCore** to configure and start the SDK.
 
 A minimal implementation looks like the following:
 
@@ -90,10 +94,6 @@ And use `FullviewCore.stop()` to disconnect and disable the SDK.
 - [SwiftUI basic example](examples/SwiftUI)
 
 ## Fullview SDK API
-
-- `func start()`
-
-
 
 - `func register(_ config: FullviewConfig)`
 
