@@ -42,7 +42,7 @@ struct ContentView: View {
 
 ### Others
 
-In cases where the above methods are not applicable for your platform, you can use a notification-based approach. Listen for the notification **Notification.Name.fullviewUpdateDataRedaction** with the *iOS Notification Center*, when received, use the `setDataRedactionFrames(_: [CGRect])` method of the **FullviewCore** instance to specify which frames (*absolute coordinates CGRects*) should be redacted.
+In cases where the above methods are not applicable for your platform, you can use a notification-based approach. Listen for the notification **Notification.Name.fullviewUpdateDataRedaction** with the *iOS Notification Center*, when received, use the `addDataRedactionFrames(_: [CGRect])` method of the **FullviewCore** instance to specify which frames (*absolute coordinates CGRects*) should be redacted.
 
 #### Example
 
@@ -55,9 +55,10 @@ NotificationCenter.default.publisher(for: .fullviewUpdateDataRedaction)) { _ in
 	let subviewsAbsoluteFrames = view.subviews.map { subview -> CGRect in
 		return subview.convert(subview.bounds, to: nil)
 	}
-	fullviewCore.setDataRedactionFrames(subviewsAbsoluteFrames)
+	fullviewCore.addDataRedactionFrames(subviewsAbsoluteFrames)
 }
 ```
+**IMPORTANT**: Once you have received the notification you have very limited time to provide the redaction frames so avoid async work. If you don't see your redaction frames in the agent UI it probably means the frames were provided too late.
 
 ### Note
 This setup ensures that tagged or wrapped elements, or frames provided through `setDataRedactionFrames`, will not appear in the shared screen feed.
