@@ -15,7 +15,7 @@ import FullviewSDK
 
 let sensitiveLabel = UILabel()
 sensitiveLabel.text = "Confidential Information"
-sensitiveLabel.tag = SensitiveViewTag // Marks the view for redaction
+sensitiveLabel.tag = DataRedactionTag // Marks the view for redaction
 ```
 
 

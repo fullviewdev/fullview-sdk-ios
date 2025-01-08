@@ -2,7 +2,7 @@
 
 **Minimum Platform Version**: iOS 15.0
 
-**Current version:** 0.9.4
+**Current version:** 0.9.7
 
 Fullview iOS SDK supports following frameworks:
 
@@ -10,14 +10,14 @@ Fullview iOS SDK supports following frameworks:
   - UIKit
   - SwiftUI
 
-Other frameworks supported:
+Other platforms supported:
 
   - Android
   - React Native
-
-Soon-supported frameworks:
-
   - Flutter
+
+Soon-supported platforms:
+
   - Ionic
   - Cordova
 

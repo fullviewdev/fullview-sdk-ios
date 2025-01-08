@@ -72,20 +72,6 @@ Follow the steps below to learn how to create a new broadcast upload extension u
     </dict>
 	```
 
-### Fullview Config
-
-When configuring the **Fullview SDK** the `FullviewConfig` struct has an additional value to configure the **Broadcast Extension**. You only need to provide your screen share extension’s bundle identifier:
-
-```
-FullviewConfig(
-    userId: userId,
-    name: username,
-    email: email,
-    deviceId: deviceId,
-    broadcastExtension: "yours.broadcast.upload.extension.identifier"
-)
-```
-
 Then the screen share button will appear during **CoBrowse** if you have `Screen Share` enabled in your organisation config.
 
 ### Troubleshooting
