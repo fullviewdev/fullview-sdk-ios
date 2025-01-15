@@ -2,7 +2,7 @@
 
 **Minimum Platform Version**: iOS 15.0
 
-**Current version:** 0.9.7
+**Current version:** 0.10.0
 
 Fullview iOS SDK supports following frameworks:
 
@@ -65,11 +65,12 @@ var fullview: FullviewCore?
 
 do {
     let config = try FullviewConfig(
-        organisationId: "<organisation_id>",
-        userId: "<user_identifier>",
-        deviceId: "<device_id>" // must be a uuid string
-        name: "<username>",
-        email: "<email>"
+        region: <FullviewRegion>,
+        organisationId: "<String>",
+        userId: "<String>",
+        deviceId: "<String>" // must be a uuid string
+        name: "<String>",
+        email: "<String>"
     )
     fullview = FullviewCore()
     fullview?.onError = { error in
