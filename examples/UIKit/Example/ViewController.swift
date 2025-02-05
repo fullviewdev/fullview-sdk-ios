@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         do {
             let config = try FullviewConfig(
+                region: .EU1,
                 userId: "<user_identifier>",
                 name: "<username>",
                 email: "<email>",

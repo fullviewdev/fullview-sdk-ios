@@ -11,6 +11,7 @@ class ViewModel: ObservableObject {
     init() {
         do {
             let config = try FullviewConfig(
+                region: .EU1,
                 userId: "<user_identifier>",
                 name: "<username>",
                 email: "<email>",
