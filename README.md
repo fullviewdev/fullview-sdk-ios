@@ -2,7 +2,7 @@
 
 **Minimum Platform Version**: iOS 15.0
 
-**Current version:** 0.10.2
+**Current version:** 0.11.0
 
 Fullview iOS SDK supports following frameworks:
 
@@ -34,8 +34,8 @@ Both **FullviewSDK** and **Daily** libraries are required. The easiest way to is
 Alternatively, add the following to your `Package` dependencies:
 
 ```swift
-.package(url: "https://github.com/fullviewdev/fullview-sdk-ios", .upToNextMinor(from: "1.0.0")),
-.package(url: "https://github.com/daily-co/daily", from: "1.0.0"),
+.package(url: "https://github.com/fullviewdev/fullview-sdk-ios", .upToNextMinor(from: "0.11.0")),
+.package(url: "https://github.com/daily-co/daily", from: "0.28.0"),
 ```
 
 Then include `"FullviewSDK"` in your target dependencies. For example:
@@ -96,11 +96,10 @@ And use `FullviewCore.stop()` to disconnect and disable the SDK.
 
 ## Fullview SDK API
 
-- `func register(_ config: FullviewConfig)`
+- `func register(_ config: FullviewConfig, onCompletion: ((Error?) -> Void)? = nil)`
 
 	Registers user to be available in Fullview
    Attaches the Fullview SDK to the host app. All the Fullview functionality is done through an additional UIWindow on top of the rest of the windows.
-
 
 - `func logout()`
 
