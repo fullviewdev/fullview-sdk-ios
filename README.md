@@ -2,7 +2,7 @@
 
 **Minimum Platform Version**: iOS 15.0
 
-**Current version:** 0.11.0
+**Current version:** 0.12.0
 
 Fullview iOS SDK supports following frameworks:
 
